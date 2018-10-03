@@ -16,6 +16,8 @@
  */
 package org.apache.commons.jexl3.internal;
 
+import com.google.j2objc.annotations.Weak;
+
 import org.apache.commons.jexl3.JexlArithmetic;
 import org.apache.commons.jexl3.JexlEngine;
 import org.apache.commons.jexl3.JexlException;
@@ -30,6 +32,7 @@ import org.apache.commons.jexl3.parser.JexlNode;
  */
 public class Operators {
     /** The owner. */
+    @Weak
     protected final Interpreter interpreter;
     /** The overloaded arithmetic operators. */
     protected final JexlArithmetic.Uberspect operators;
