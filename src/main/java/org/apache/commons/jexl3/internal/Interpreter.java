@@ -187,7 +187,7 @@ public class Interpreter extends InterpreterBase {
         } catch (JexlException.Return xreturn) {
             return xreturn.getValue();
         } catch (JexlException.Cancel xcancel) {
-            cancelled |= Thread.interrupted();
+            cancelled = cancelled || Thread.interrupted();
             if (isCancellable()) {
                 throw xcancel.clean();
             }
