@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'com.github.j2objccontrib.j2objcgradle'
+
+group = 'org.apache.commons'
+version = '3.2-SNAPSHOT'
+
+dependencies {
+    compile "commons-logging:commons-logging:1.2"
+}
+
+j2objcConfig {
+    autoConfigureDeps true
+    translateOnlyMode true
+
+    translateArgs '-use-arc'
+    finalConfigure()
+}
